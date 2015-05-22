@@ -1,0 +1,19 @@
+@import 'foundation_and_overrides';
+@import 'columns';
+@import 'reset';
+
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+//****************************************//
+//             MOBILE SETTINGS            //
+//****************************************//
+
+@media screen and (max-width: 480px) {
+
+  .container {
+    margin: 0;
+  }
+}
