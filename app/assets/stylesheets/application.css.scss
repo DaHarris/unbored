@@ -1,6 +1,36 @@
 @import 'foundation_and_overrides';
 @import 'columns';
 @import 'reset';
+@import 'variables';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.top-bar {
+  z-index: 1001;
+}
+
+.svg-icons {
+  margin: 20%;
+}
+
+.svg-icons:hover {
+  opacity: 0.5;
+}
+
+.sidebar {
+  position: absolute;
+  top: 45px;
+  background: $bg-white;
+  width: 6%;
+  border-right: thin solid #888888;
+  height: 96%;
+  z-index: 1000;
+  overflow: scroll;
+}
 
 .container {
   margin-left: 10%;
@@ -8,9 +38,30 @@
 }
 
 #map-canvas {
-  float: left;
+  height: 96%;
+  width: 94%;
+  left: 6%;
+}
+
+.menupull {
+  position: absolute;
+  background: $bg-grey;
+  width: 70%;
   height: 100%;
-  width: 100%;
+  z-index: 1000;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  top: 45px;
+  overflow-y: scroll;
+}
+
+.menupull.closed {
+  right: -70%;
+}
+
+.menupull.open {
+  right: 0%;
 }
 
 //****************************************//
