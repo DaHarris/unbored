@@ -42,7 +42,7 @@ $(document).ready(function() {
         // }
 
 
-        // var activities = [];
+        //var activities = [];
         //
         // function getActivities() {
         //   $.ajax({
