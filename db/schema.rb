@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608233422) do
+ActiveRecord::Schema.define(version: 20150609213856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,20 +48,20 @@ ActiveRecord::Schema.define(version: 20150608233422) do
     t.string  "icon",        default: "brewery.png"
   end
 
+  create_table "cafes", force: :cascade do |t|
+    t.string "name"
+    t.float  "lat"
+    t.float  "long"
+    t.string "description"
+    t.string "icon",        default: "coffee.svg"
+  end
+
   create_table "camps", force: :cascade do |t|
     t.string "name"
     t.float  "lat"
     t.float  "long"
     t.string "description"
     t.string "icon",        default: "camp.jpg"
-  end
-
-  create_table "coffees", force: :cascade do |t|
-    t.string "name"
-    t.float  "lat"
-    t.float  "long"
-    t.string "description"
-    t.string "icon",        default: "coffee.svg"
   end
 
   create_table "concerts", force: :cascade do |t|

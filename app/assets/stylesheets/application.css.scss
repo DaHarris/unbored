@@ -1,4 +1,5 @@
 @import 'foundation_and_overrides';
+@import 'foundation-icons';
 @import 'columns';
 @import 'reset';
 @import 'variables';
@@ -7,6 +8,24 @@ html, body {
   width: 100%;
   height: 100%;
   position: fixed;
+}
+
+form, #form {
+  color: #DDDDDD;
+}
+
+#icons * {
+  margin: 10px;
+}
+
+#icons {
+  padding-left: 9%;
+  padding-right: 9%;
+  min-height: 130px;
+}
+
+#close:hover {
+  opacity: 0.5;
 }
 
 .top-bar {
@@ -62,6 +81,10 @@ html, body {
 
 .menupull.open {
   right: 0%;
+}
+
+#title {
+  color: #DDDDDD;
 }
 
 //****************************************//

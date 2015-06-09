@@ -8,14 +8,23 @@ $(document).ready(function() {
     var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
+    google.maps.event.addListener(map, "click", function(event) {
+      $('#lat > input').val(event.latLng.lat());
+      $('#long > input').val(event.latLng.lng());
+    });
+
     // Try HTML5 geolocation
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = new google.maps.LatLng(position.coords.latitude,
                                          position.coords.longitude);
 
-
         map.setCenter(pos);
+
+        $('#close').on('click', function() {
+          $('.menupull').removeClass('open');
+          $('.menupull').addClass('closed');
+        })
 
         // function centerFoodTruck(lat, long) {
         //   $('#map-canvas').css('width','30%');
