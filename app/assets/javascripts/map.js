@@ -51,24 +51,21 @@ $(document).ready(function() {
         // }
 
 
-        //var activities = [];
-        //
-        // function getActivities() {
-        //   $.ajax({
-        //     url: "/sample",
-        //     type: "get"
-        //   }).success(function(data) {
-        //     $.each(data, function(index, activity) {
-        //       activites.push(activity);
-        //       setMarker(truck.latitude, truck.longitude, activity.name);
-        //     })
-        //   })
-        // };
-        //
-        // getActivities();
+        function getActivities() {
+          $.ajax({
+            url: "/activities/getAllActivities",
+            type: "get"
+          }).success(function(data) {
+            $.each(data, function(index, activity) {
+              setMarker(activity.lat, activity.long, activity.name, activity.icon);
+            })
+          })
+        };
+
+        getActivities();
         setMarker();
 
-        function setMarker(lat, long, title) {
+        function setMarker(lat, long, title, icon) {
           if (lat === undefined && long === undefined) {
             lat = position.coords.latitude;
             long = position.coords.longitude;
@@ -77,19 +74,19 @@ $(document).ready(function() {
 
           pos = new google.maps.LatLng(lat,long);
 
-          // var iconbase;
-          //
-          // if (title == "Your Location") {
-          //   iconBase = 'http://piepho.com/wp-content/uploads/2012/12/glyphicons_242_google_maps.png';
-          // } else {
-          //   iconBase = 'http://enroute.aircanada.com/web/images/icons/city/map-red-pin-food_drink.png';
-          // }
+          var iconbase;
+
+          if (title == "Your Location") {
+            iconBase = 'http://piepho.com/wp-content/uploads/2012/12/glyphicons_242_google_maps.png';
+          } else {
+            iconBase = '/assets/' + icon;
+          }
 
           var marker = new google.maps.Marker({
               position: pos,
               map: map,
-              title: title
-              // icon: iconBase
+              title: title,
+              icon: iconBase
           });
 
 
