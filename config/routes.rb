@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'activities/getFormInfo' => 'activities#getFormInfo'
   post 'activities/newActivity' => 'activities#newActivity'
+  get 'activities/getAllActivities' => 'activities#getAllActivities'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

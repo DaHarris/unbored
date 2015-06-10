@@ -34,4 +34,16 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def getAllActivities
+    tables = ActiveRecord::Base.connection.tables.map(&:singularize)
+    models = tables.map{|model| model.capitalize + ".all"}
+    models.delete("Schema_migration.all")
+    activities = []
+    models.each do |model|
+      activities << eval(model)
+    end
+    activities = activities.flatten
+    render json: activities
+  end
+
 end
