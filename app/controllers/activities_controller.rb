@@ -14,4 +14,24 @@ class ActivitiesController < ApplicationController
     render json: hash
   end
 
+  def newActivity
+    params.delete :controller
+    params.delete :action
+    model = params["model"] + ".new"
+    params.delete :model
+
+    activity = eval(model)
+
+    params.each do |key, value|
+      activity[key] = value
+    end
+
+    if activity.valid?
+      activity.save
+      render json: {"success":true}
+    else
+      render json: {"success":false}
+    end
+  end
+
 end

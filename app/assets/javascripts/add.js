@@ -13,7 +13,8 @@ $(document).ready(function() {
     });
     $('#icons > .svg-icons').on('click', function() {
       $('#form').empty();
-      var params = {model: this.id + ".new"};
+      modelName = this.id;
+      var params = {model: modelName + ".new"};
       $.ajax({
         url: '/activities/getFormInfo',
         type: 'get',
@@ -31,20 +32,35 @@ $(document).ready(function() {
           }
         });
         $('#form').append('<input type="submit" id="submit" value="Submit"><br><br><br><br><br>');
-        submit();
+        submitListener(modelName);
       })
     });
   });
 
-  function submit() {
+  function submitListener(modelName) {
     $('#submit').on('click', function() {
-      var params = {};
+      var params = {model: modelName};
       $('input').each(function(index, info) {
         params[$(info).parent()[0].id] = $(info).val();
       });
       params[$('textarea').parent()[0].id] = $('textarea').val();
       delete params['form'];
-      console.log(params);
+      submit(params);
+    });
+  }
+
+  function submit(params) {
+    $.ajax({
+      url: '/activities/newActivity',
+      type: 'post',
+      data: params
+    }).success(function(data) {
+      if (data["success"] === true) {
+        $('.menupull').removeClass('open');
+        $('.menupull').addClass('closed');
+      } else {
+        $('#form').prepend('<div id="error" style="font-size: 150%;background: #DDDDDD;color: red;width: 100%;height: 5%;">Error: All information must be filled out.</div><br>')
+      }
     });
   }
 });
