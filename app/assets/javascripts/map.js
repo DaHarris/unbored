@@ -82,8 +82,40 @@ $(document).ready(function() {
           })
         };
 
+        $('.sidebar > .svg-icons').on('click', function() {
+          if (this.id != "add") {
+            getActivity(this.id);
+          }
+        });
+
+        function getActivity(choice) {
+          clearMarkers();
+          setMarker();
+          params = {model: choice};
+          $.ajax({
+            url: "/activities/getActivity",
+            type: "get",
+            data: params
+          }).success(function(data) {
+            $.each(data, function(index, activity) {
+              console.log(activity);
+              setMarker(activity.lat, activity.long, activity.name, activity.icon);
+            });
+          });
+        }
+
+        var markers = [];
+        var allMarkers;
         getActivities();
         setMarker();
+
+
+        function clearMarkers() {
+          allMarkers = markers;
+          for (i=0;i<markers.length;i++) {
+            markers[i].setMap(null);
+          }
+        }
 
         function setMarker(lat, long, title, icon) {
           if (lat === undefined && long === undefined) {
@@ -114,6 +146,8 @@ $(document).ready(function() {
               title: title,
               icon: icon
           });
+
+          markers.push(marker);
 
           if (title != "Your Location") {
             google.maps.event.addListener(marker, 'click', function(){menuPull(marker.title);});

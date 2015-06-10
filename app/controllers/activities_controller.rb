@@ -47,4 +47,12 @@ class ActivitiesController < ApplicationController
     render json: activities
   end
 
+  def getActivity
+    url = request.env["HTTP_REFERER"]
+    if url == "http://foodtruckin.herokuapp.com/" || url == "http://localhost:3000/"
+      model = params["model"] + ".all"
+      render json: eval(model)
+    end
+  end
+
 end
