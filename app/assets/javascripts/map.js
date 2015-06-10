@@ -21,6 +21,26 @@ $(document).ready(function() {
 
         map.setCenter(pos);
 
+        var markers = [];
+        var activityAsked = false;
+        var allMarkers = [];
+
+        function clearMarkers() {
+          allMarkers = markers;
+          for (i=0;i<markers.length;i++) {
+            markers[i].setMap(null);
+          }
+        }
+
+        function resetMarkers() {
+          if (activityAsked == true) {
+            for (i=0;i<allMarkers.length;i++) {
+              allMarkers[i].setMap(map);
+            }
+            markers = allMarkers;
+          }
+        }
+
         $('#close').on('click', function() {
           $('.menupull').removeClass('open');
           $('.menupull').addClass('closed');
@@ -83,12 +103,18 @@ $(document).ready(function() {
         };
 
         $('.sidebar > .svg-icons').on('click', function() {
-          if (this.id != "add") {
+          if (this.id === "reset") {
+            resetMarkers();
+          } else if (this.id != "add") {
             getActivity(this.id);
           }
         });
 
+        getActivities();
+        setMarker();
+
         function getActivity(choice) {
+          activityAsked = true;
           clearMarkers();
           setMarker();
           params = {model: choice};
@@ -102,19 +128,6 @@ $(document).ready(function() {
               setMarker(activity.lat, activity.long, activity.name, activity.icon);
             });
           });
-        }
-
-        var markers = [];
-        var allMarkers;
-        getActivities();
-        setMarker();
-
-
-        function clearMarkers() {
-          allMarkers = markers;
-          for (i=0;i<markers.length;i++) {
-            markers[i].setMap(null);
-          }
         }
 
         function setMarker(lat, long, title, icon) {
