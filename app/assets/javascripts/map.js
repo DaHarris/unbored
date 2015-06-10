@@ -24,32 +24,51 @@ $(document).ready(function() {
         $('#close').on('click', function() {
           $('.menupull').removeClass('open');
           $('.menupull').addClass('closed');
+          $('#map-canvas').css('width','94%');
+          google.maps.event.trigger(map, "resize");
         })
 
-        // function centerFoodTruck(lat, long) {
-        //   $('#map-canvas').css('width','30%');
-        //   google.maps.event.trigger(map, "resize");
-        //   position = new google.maps.LatLng(lat, long);
-        //   map.setCenter(position);
-        //   map.setZoom(16);
-        // }
-        //
-        // $('body').on('click', '.fi-x', function(){
-        //   $('#pullout').css('width','0%');
-        //   $('#map-canvas').css('width','100%');
-        //   google.maps.event.trigger(map, "resize");
-        // });
-        //
-        // function menuPull(name) {
-        //   $('#pullout').css('width','70%');
-        //   truck = foodTrucks.filter(function(x) { return x.name === name})[0];
-        //   $('#name').text("    " + truck.name);
-        //   $('#name').prepend('<i class="fi-x"></i>');
-        //   $('#address').text(truck.location);
-        //   $('#other-address').text(truck.location_description);
-        //   $('#food').text("Offerings: " + truck.food);
-        // }
+        function centerActivity(lat, long) {
+          $('#map-canvas').css('width','30%');
+          google.maps.event.trigger(map, "resize");
+          position = new google.maps.LatLng(lat, long);
+          map.setCenter(position);
+          map.setZoom(16);
+        }
 
+        function menuPull(name) {
+
+          $('#icons').html('<br>');
+          $('#title').text();
+          $('#extraInfo .infoExtras').empty();
+          $('.infoExtras').remove();
+          $('#icons').css('height', '50%');
+
+          $('.menupull').removeClass('closed');
+          $('.menupull').addClass('open');
+          $('#title').text('Add New Activity');
+          found = activities.filter(function(x) { return x.name === name})[0];
+          activity = jQuery.extend({}, found);
+
+          $('#title').text(activity.name);
+
+
+          delete activity.id;
+          delete activity.name;
+          delete activity.lat;
+          delete activity.long;
+          delete activity.icon;
+
+          for (var i in activity) {
+            if (i === "description") {
+              $('#icons').append('<div class="infoBox">' + activity[i].replace(/\n/g, "<br />") + '<br></div>');
+            } else {
+              $('#extraInfo').append('<div class="infoExtras">' + i + ': ' + activity[i] + '<br></div>');
+            }
+          }
+        }
+
+        var activities = [];
 
         function getActivities() {
           $.ajax({
@@ -57,6 +76,7 @@ $(document).ready(function() {
             type: "get"
           }).success(function(data) {
             $.each(data, function(index, activity) {
+              activities.push(activity);
               setMarker(activity.lat, activity.long, activity.name, activity.icon);
             })
           })
@@ -77,18 +97,23 @@ $(document).ready(function() {
           var iconbase;
 
           if (title == "Your Location") {
-            iconBase = 'http://piepho.com/wp-content/uploads/2012/12/glyphicons_242_google_maps.png';
+            icon = 'http://piepho.com/wp-content/uploads/2012/12/glyphicons_242_google_maps.png';
           } else {
             iconBase = '/assets/' + icon;
+            var icon = {
+              url: iconBase,
+              scaledSize: new google.maps.Size(32,32),
+              origin: new google.maps.Point(0,0),
+              anchor: new google.maps.Point(0,0)
+            }
           }
 
           var marker = new google.maps.Marker({
               position: pos,
               map: map,
               title: title,
-              icon: iconBase
+              icon: icon
           });
-
 
           if (title != "Your Location") {
             google.maps.event.addListener(marker, 'click', function(){menuPull(marker.title);});

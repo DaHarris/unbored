@@ -51,6 +51,23 @@ form, #form {
   overflow: scroll;
 }
 
+#title {
+  margin-left: 10%;
+}
+
+.infoExtras {
+  background: #777777;
+  color: #BBBBBB;
+  padding-left: 10%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+#extraInfo {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .container {
   margin-left: 10%;
   margin-right: 10%;
@@ -73,6 +90,10 @@ form, #form {
   transition: all 0.5s ease;
   top: 45px;
   overflow-y: scroll;
+}
+
+.infoBox {
+  color: #333333;
 }
 
 .menupull.closed {

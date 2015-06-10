@@ -58,6 +58,13 @@ $(document).ready(function() {
       if (data["success"] === true) {
         $('.menupull').removeClass('open');
         $('.menupull').addClass('closed');
+        pos = new google.maps.LatLng(data["lat"],data["long"]);
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: title,
+            icon: icon
+        });
       } else {
         $('#form').prepend('<div id="error" style="font-size: 150%;background: #DDDDDD;color: red;width: 100%;height: 5%;">Error: All information must be filled out.</div><br>')
       }

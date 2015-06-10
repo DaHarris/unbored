@@ -28,7 +28,8 @@ class ActivitiesController < ApplicationController
 
     if activity.valid?
       activity.save
-      render json: {"success":true}
+      render json: {"success":true, "name":activity.name, "lat":activity.lat,
+                    "long":activity.long, "icon":activity.icon}
     else
       render json: {"success":false}
     end

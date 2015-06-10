@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
+//= require map
+//= require icons
+//= require add
 
 $(function(){ $(document).foundation(); });
