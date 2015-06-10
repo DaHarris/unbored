@@ -5,7 +5,7 @@ class CreateBoat < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.string :description
-      t.string :icon, default: "Boat.svg"
+      t.string :icon, default: "Boat.png"
     end
   end
 end

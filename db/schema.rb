@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float  "lat"
     t.float  "long"
     t.string "description"
-    t.string "icon",        default: "Boat.svg"
+    t.string "icon",        default: "Boat.png"
   end
 
   create_table "breweries", force: :cascade do |t|
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float  "lat"
     t.float  "long"
     t.string "description"
-    t.string "icon",        default: "Camp.jpg"
+    t.string "icon",        default: "Camp.png"
   end
 
   create_table "concerts", force: :cascade do |t|
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float   "long"
     t.string  "description"
     t.integer "holes"
-    t.string  "icon",        default: "Dgbasket.jpg"
+    t.string  "icon",        default: "Dgbasket.png"
   end
 
   create_table "fish", force: :cascade do |t|

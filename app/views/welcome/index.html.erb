@@ -1,14 +1,19 @@
 <div id="map-canvas"></div>
 
 <div class="sidebar">
+  <% if current_user %>
+    <script>
+      addIcon("add.svg");
+    </script>
+  <% end %>
+
   <script>
-    addIcon("add.svg");
     addIcon("reset.png");
     addIcon("Bar.svg");
     addIcon("Brewery.png");
-    addIcon("Camp.jpg");
+    addIcon("Camp.png");
     addIcon("Concert.png");
-    addIcon("Dgbasket.jpg");
+    addIcon("Dgbasket.png");
     addIcon("Hiking.png");
     addIcon("Icecream.png");
     addIcon("Museum.png");

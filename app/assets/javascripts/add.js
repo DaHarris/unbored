@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('.menupull').addClass('open');
     $('#title').text('Add New Activity');
     $('.svg-icons').each(function(index) {
-      if (index === 0) {
+      if (index === 0 || index === 1) {
         return true;
       }
       $('#icons').append($(this).clone());
@@ -56,15 +56,7 @@ $(document).ready(function() {
       data: params
     }).success(function(data) {
       if (data["success"] === true) {
-        $('.menupull').removeClass('open');
-        $('.menupull').addClass('closed');
-        pos = new google.maps.LatLng(data["lat"],data["long"]);
-        var marker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            title: title,
-            icon: icon
-        });
+        window.location.reload();
       } else {
         $('#form').prepend('<div id="error" style="font-size: 150%;background: #DDDDDD;color: red;width: 100%;height: 5%;">Error: All information must be filled out.</div><br>')
       }
