@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   get 'activities/getAllActivities' => 'activities#getAllActivities'
   get 'activities/getActivity' => 'activities#getActivity'
 
+  resources :users, only: [:new, :create, :destroy]
+
+  get 'signin' => 'sessions#new'
+  post 'signin' => 'sessions#create'
+  get 'signout' => 'sessions#destroy'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
