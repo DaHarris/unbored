@@ -189,7 +189,7 @@ $(document).ready(function() {
             type: 'post',
             data: params
           }).success(function(data) {
-            if (data["success"] === true) {
+            if (data["success"] === "true") {
               setMarker(data["lat"], data["long"], data["name"], data["icon"]);
               $('.menupull').removeClass('open');
               $('.menupull').addClass('closed');
