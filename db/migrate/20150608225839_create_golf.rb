@@ -7,11 +7,11 @@ class CreateGolf < ActiveRecord::Migration
       t.string :description
       t.integer :holes
       t.string :price
-      t.integer :phone
+      t.string :phone
       t.string :address
-      t.integer :open
-      t.integer :close
-      t.string :icon, default: "golf.png"
+      t.string :open
+      t.string :close
+      t.string :icon, default: "Golf.png"
     end
   end
 end

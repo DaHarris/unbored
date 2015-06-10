@@ -5,7 +5,7 @@ class CreateHiking < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.string :description
-      t.string :icon, default: "hiking.png"
+      t.string :icon, default: "Hiking.png"
     end
   end
 end

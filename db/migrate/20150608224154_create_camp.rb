@@ -5,7 +5,7 @@ class CreateCamp < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.string :description
-      t.string :icon, default: "camp.jpg"
+      t.string :icon, default: "Camp.jpg"
     end
   end
 end

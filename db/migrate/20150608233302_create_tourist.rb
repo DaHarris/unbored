@@ -6,11 +6,11 @@ class CreateTourist < ActiveRecord::Migration
       t.float :long
       t.string :description
       t.string :address
-      t.integer :phone
-      t.integer :open
-      t.integer :close
+      t.string :phone
+      t.string :open
+      t.string :close
       t.float :price
-      t.string :icon, default: "tourist.png"
+      t.string :icon, default: "Tourist.png"
     end
   end
 end

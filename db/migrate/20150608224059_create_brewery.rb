@@ -4,12 +4,12 @@ class CreateBrewery < ActiveRecord::Migration
       t.string :name
       t.float :lat
       t.float :long
-      t.integer :open
-      t.integer :close
-      t.integer :phone
+      t.string :open
+      t.string :close
+      t.string :phone
       t.string :address
       t.string :description
-      t.string :icon, default: "brewery.png"
+      t.string :icon, default: "Brewery.png"
     end
   end
 end

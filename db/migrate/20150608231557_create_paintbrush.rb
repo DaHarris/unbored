@@ -6,10 +6,10 @@ class CreatePaintbrush < ActiveRecord::Migration
       t.float :long
       t.string :description
       t.string :address
-      t.integer :phone
-      t.integer :open
-      t.integer :close
-      t.string :icon, default: "paintbrush.png"
+      t.string :phone
+      t.string :open
+      t.string :close
+      t.string :icon, default: "Paintbrush.png"
     end
   end
 end

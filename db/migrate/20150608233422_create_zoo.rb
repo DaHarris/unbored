@@ -6,10 +6,10 @@ class CreateZoo < ActiveRecord::Migration
       t.float :long
       t.string :description
       t.string :address
-      t.integer :phone
-      t.integer :open
-      t.integer :close
-      t.string :icon, default: "zoo.png"
+      t.string :phone
+      t.string :open
+      t.string :close
+      t.string :icon, default: "Zoo.png"
     end
   end
 end

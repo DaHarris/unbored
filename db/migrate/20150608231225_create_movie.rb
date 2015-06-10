@@ -5,11 +5,11 @@ class CreateMovie < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.string :description
-      t.integer :open
-      t.integer :close
+      t.string :open
+      t.string :close
       t.string :address
-      t.integer :phone
-      t.string :icon, default: "movie.png"
+      t.string :phone
+      t.string :icon, default: "Movie.png"
     end
   end
 end

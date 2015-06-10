@@ -5,7 +5,7 @@ class CreateCoffee < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.string :description
-      t.string :icon, default: "coffee.svg"
+      t.string :icon, default: "Cafe.svg"
     end
   end
 end

@@ -5,11 +5,11 @@ class CreateIcecream < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.string :description
-      t.integer :open
-      t.integer :close
-      t.integer :phone
+      t.string :open
+      t.string :close
+      t.string :phone
       t.string :address
-      t.string :icon, default: "ice-cream.png"
+      t.string :icon, default: "Icecream.png"
     end
   end
 end

@@ -6,10 +6,10 @@ class CreateMuseum < ActiveRecord::Migration
       t.float :long
       t.string :description
       t.string :address
-      t.integer :open
-      t.integer :close
-      t.integer :phone
-      t.string :icon, default: "museum.png"
+      t.string :open
+      t.string :close
+      t.string :phone
+      t.string :icon, default: "Museum.png"
     end
   end
 end

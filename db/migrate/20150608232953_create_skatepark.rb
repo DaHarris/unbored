@@ -5,7 +5,7 @@ class CreateSkatepark < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.string :description
-      t.string :icon, default: "skatepark.png"
+      t.string :icon, default: "Skatepark.png"
     end
   end
 end

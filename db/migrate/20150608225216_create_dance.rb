@@ -5,11 +5,11 @@ class CreateDance < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.string :description
-      t.integer :open
-      t.integer :close
+      t.string :open
+      t.string :close
       t.string :address
-      t.integer :phone
-      t.string :icon, default: "dance.png"
+      t.string :phone
+      t.string :icon, default: "Dance.png"
     end
   end
 end
