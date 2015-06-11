@@ -50,8 +50,12 @@ class ActivitiesController < ApplicationController
 
   def getActivity
     url = request.env["HTTP_REFERER"]
-    if url == "http://foodtruckin.herokuapp.com/" || url == "http://localhost:3000/"
-      render json: params["model"].capitalize.constantize.all
+    if url == "http://un-bored.herokuapp.com/"
+      if params["model"] =~ /user/i
+        render json: {error: "uh uh uhhhh, you didn't say the magic word..."}
+      else
+        render json: params["model"].capitalize.constantize.all
+      end
     end
   end
 
