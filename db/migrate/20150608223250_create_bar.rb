@@ -9,7 +9,7 @@ class CreateBar < ActiveRecord::Migration
       t.string :phone
       t.string :address
       t.string :description
-      t.string :icon, default: "bar.svg"
+      t.string :icon, default: "Bar.svg"
     end
   end
 end
