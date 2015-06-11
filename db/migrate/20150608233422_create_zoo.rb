@@ -9,7 +9,7 @@ class CreateZoo < ActiveRecord::Migration
       t.string :phone
       t.string :open
       t.string :close
-      t.string :icon, default: "Zoo.png"
+      t.string :icon, default: "zoo.png"
     end
   end
 end

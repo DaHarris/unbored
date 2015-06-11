@@ -11,7 +11,7 @@ class CreateGolf < ActiveRecord::Migration
       t.string :address
       t.string :open
       t.string :close
-      t.string :icon, default: "Golf.png"
+      t.string :icon, default: "golf.png"
     end
   end
 end

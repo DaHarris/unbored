@@ -9,7 +9,7 @@ class CreateMovie < ActiveRecord::Migration
       t.string :close
       t.string :address
       t.string :phone
-      t.string :icon, default: "Movie.png"
+      t.string :icon, default: "movie.png"
     end
   end
 end

@@ -9,7 +9,7 @@ class CreateMuseum < ActiveRecord::Migration
       t.string :open
       t.string :close
       t.string :phone
-      t.string :icon, default: "Museum.png"
+      t.string :icon, default: "museum.png"
     end
   end
 end

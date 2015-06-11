@@ -21,6 +21,8 @@ $(document).ready(function() {
 
         map.setCenter(pos);
 
+        var yourLat = position.coords.latitude;
+        var yourLong = position.coords.longitude;
         var markers = [];
         var activityAsked = false;
         var allMarkers = [];
@@ -148,7 +150,7 @@ $(document).ready(function() {
           $('#icons > .svg-icons').on('click', function() {
             $('#form').empty();
             modelName = this.id;
-            var params = {model: modelName + ".new"};
+            var params = {model: modelName};
             $.ajax({
               url: '/activities/getFormInfo',
               type: 'get',
@@ -194,6 +196,10 @@ $(document).ready(function() {
               $('.menupull').removeClass('open');
               $('.menupull').addClass('closed');
               $('#map-canvas').css('width','94%');
+              $('#form').empty();
+              $('#title').text();
+              delete params.model
+              activities.push(params);
               google.maps.event.trigger(map, "resize");
             } else {
               $('#form').prepend('<div id="error" style="font-size: 150%;background: #DDDDDD;color: red;width: 100%;height: 5%;">Error: All information must be filled out.</div><br>')
@@ -203,8 +209,8 @@ $(document).ready(function() {
 
         function setMarker(lat, long, title, icon) {
           if (lat === undefined && long === undefined) {
-            lat = position.coords.latitude;
-            long = position.coords.longitude;
+            lat = yourLat;
+            long = yourLong;
             title = "Your Location";
           }
 

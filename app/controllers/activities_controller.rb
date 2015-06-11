@@ -2,7 +2,8 @@ class ActivitiesController < ApplicationController
 
   def getFormInfo
     hash = {}
-    model = eval(params["model"])
+    modelName = params["model"].capitalize + ".new"
+    model = eval(modelName)
     attributes = model.attribute_names
     attributes.each do |attr|
       if attr == "id" || attr == "icon"
@@ -17,7 +18,7 @@ class ActivitiesController < ApplicationController
   def newActivity
     params.delete :controller
     params.delete :action
-    model = params["model"] + ".new"
+    model = params["model"].capitalize + ".new"
     params.delete :model
 
     activity = eval(model)
@@ -50,7 +51,7 @@ class ActivitiesController < ApplicationController
   def getActivity
     url = request.env["HTTP_REFERER"]
     if url == "http://foodtruckin.herokuapp.com/" || url == "http://localhost:3000/"
-      model = params["model"] + ".all"
+      model = params["model"].capitalize + ".all"
       render json: eval(model)
     end
   end

@@ -7,7 +7,7 @@ class CreateConcert < ActiveRecord::Migration
       t.string :description
       t.string :address
       t.string :phone
-      t.string :icon, default: "Concert.png"
+      t.string :icon, default: "concert.png"
     end
   end
 end

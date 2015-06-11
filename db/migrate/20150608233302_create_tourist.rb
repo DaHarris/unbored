@@ -10,7 +10,7 @@ class CreateTourist < ActiveRecord::Migration
       t.string :open
       t.string :close
       t.float :price
-      t.string :icon, default: "Tourist.png"
+      t.string :icon, default: "tourist.png"
     end
   end
 end

@@ -9,7 +9,7 @@ class CreateBrewery < ActiveRecord::Migration
       t.string :phone
       t.string :address
       t.string :description
-      t.string :icon, default: "Brewery.png"
+      t.string :icon, default: "brewery.png"
     end
   end
 end

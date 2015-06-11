@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "phone"
     t.string "address"
     t.string "description"
-    t.string "icon",        default: "Bar.svg"
+    t.string "icon",        default: "bar.svg"
   end
 
   create_table "boats", force: :cascade do |t|
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float  "lat"
     t.float  "long"
     t.string "description"
-    t.string "icon",        default: "Boat.png"
+    t.string "icon",        default: "boat.png"
   end
 
   create_table "breweries", force: :cascade do |t|
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "phone"
     t.string "address"
     t.string "description"
-    t.string "icon",        default: "Brewery.png"
+    t.string "icon",        default: "brewery.png"
   end
 
   create_table "cafes", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float  "lat"
     t.float  "long"
     t.string "description"
-    t.string "icon",        default: "Cafe.svg"
+    t.string "icon",        default: "cafe.svg"
   end
 
   create_table "camps", force: :cascade do |t|
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float  "lat"
     t.float  "long"
     t.string "description"
-    t.string "icon",        default: "Camp.png"
+    t.string "icon",        default: "camp.png"
   end
 
   create_table "concerts", force: :cascade do |t|
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "description"
     t.string "address"
     t.string "phone"
-    t.string "icon",        default: "Concert.png"
+    t.string "icon",        default: "concert.png"
   end
 
   create_table "dances", force: :cascade do |t|
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "close"
     t.string "address"
     t.string "phone"
-    t.string "icon",        default: "Dance.png"
+    t.string "icon",        default: "dance.png"
   end
 
   create_table "dgbaskets", force: :cascade do |t|
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float   "long"
     t.string  "description"
     t.integer "holes"
-    t.string  "icon",        default: "Dgbasket.png"
+    t.string  "icon",        default: "dgbasket.png"
   end
 
   create_table "fish", force: :cascade do |t|
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float  "lat"
     t.float  "long"
     t.string "description"
-    t.string "icon",        default: "Fish.png"
+    t.string "icon",        default: "fish.png"
   end
 
   create_table "golves", force: :cascade do |t|
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string  "address"
     t.string  "open"
     t.string  "close"
-    t.string  "icon",        default: "Golf.png"
+    t.string  "icon",        default: "golf.png"
   end
 
   create_table "hikings", force: :cascade do |t|
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float  "lat"
     t.float  "long"
     t.string "description"
-    t.string "icon",        default: "Hiking.png"
+    t.string "icon",        default: "hiking.png"
   end
 
   create_table "icecreams", force: :cascade do |t|
@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "close"
     t.string "phone"
     t.string "address"
-    t.string "icon",        default: "Icecream.png"
+    t.string "icon",        default: "icecream.png"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -146,7 +146,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "close"
     t.string "address"
     t.string "phone"
-    t.string "icon",        default: "Movie.png"
+    t.string "icon",        default: "movie.png"
   end
 
   create_table "museums", force: :cascade do |t|
@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "open"
     t.string "close"
     t.string "phone"
-    t.string "icon",        default: "Museum.png"
+    t.string "icon",        default: "museum.png"
   end
 
   create_table "paintbrushes", force: :cascade do |t|
@@ -170,7 +170,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "phone"
     t.string "open"
     t.string "close"
-    t.string "icon",        default: "Paintbrush.png"
+    t.string "icon",        default: "paintbrush.png"
   end
 
   create_table "parks", force: :cascade do |t|
@@ -178,7 +178,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float  "lat"
     t.float  "long"
     t.string "description"
-    t.string "icon",        default: "Park.png"
+    t.string "icon",        default: "park.png"
   end
 
   create_table "skateparks", force: :cascade do |t|
@@ -186,7 +186,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.float  "lat"
     t.float  "long"
     t.string "description"
-    t.string "icon",        default: "Skatepark.png"
+    t.string "icon",        default: "skatepark.png"
   end
 
   create_table "theatres", force: :cascade do |t|
@@ -196,7 +196,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "description"
     t.string "address"
     t.string "phone"
-    t.string "icon",        default: "Theatre.png"
+    t.string "icon",        default: "theatre.png"
   end
 
   create_table "tourists", force: :cascade do |t|
@@ -209,7 +209,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "open"
     t.string "close"
     t.float  "price"
-    t.string "icon",        default: "Tourist.png"
+    t.string "icon",        default: "tourist.png"
   end
 
   create_table "users", force: :cascade do |t|
@@ -226,7 +226,7 @@ ActiveRecord::Schema.define(version: 20150610210036) do
     t.string "phone"
     t.string "open"
     t.string "close"
-    t.string "icon",        default: "Zoo.png"
+    t.string "icon",        default: "zoo.png"
   end
 
 end

@@ -7,7 +7,7 @@ class CreateTheatre < ActiveRecord::Migration
       t.string :description
       t.string :address
       t.string :phone
-      t.string :icon, default: "Theatre.png"
+      t.string :icon, default: "theatre.png"
     end
   end
 end

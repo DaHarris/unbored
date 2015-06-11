@@ -5,7 +5,7 @@ class CreateFish < ActiveRecord::Migration
       t.float :lat
       t.float :long
       t.string :description
-      t.string :icon, default: "Fish.png"
+      t.string :icon, default: "fish.png"
     end
   end
 end

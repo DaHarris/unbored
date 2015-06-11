@@ -9,7 +9,7 @@ class CreatePaintbrush < ActiveRecord::Migration
       t.string :phone
       t.string :open
       t.string :close
-      t.string :icon, default: "Paintbrush.png"
+      t.string :icon, default: "paintbrush.png"
     end
   end
 end

@@ -9,7 +9,7 @@ class CreateDance < ActiveRecord::Migration
       t.string :close
       t.string :address
       t.string :phone
-      t.string :icon, default: "Dance.png"
+      t.string :icon, default: "dance.png"
     end
   end
 end
