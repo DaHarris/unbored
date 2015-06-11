@@ -126,6 +126,16 @@ form, #form {
   color: #DDDDDD;
 }
 
+#submit, input[type="submit"] {
+  border: 0;
+  background: #008CBA;
+  width: 30%;
+  height: 45px;
+  color: #FFFFFF;
+  min-width: 120px;
+  max-width: 200px;
+}
+
 //****************************************//
 //             MOBILE SETTINGS            //
 //****************************************//
