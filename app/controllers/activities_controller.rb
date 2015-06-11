@@ -2,8 +2,8 @@ class ActivitiesController < ApplicationController
 
   def getFormInfo
     hash = {}
-    modelName = params["model"].capitalize + ".new"
-    model = eval(modelName)
+    modelName = params["model"].capitalize
+    model = modelName.constantize.new
     attributes = model.attribute_names
     attributes.each do |attr|
       if attr == "id" || attr == "icon"
@@ -18,10 +18,10 @@ class ActivitiesController < ApplicationController
   def newActivity
     params.delete :controller
     params.delete :action
-    model = params["model"].capitalize + ".new"
+    model = params["model"].capitalize
     params.delete :model
 
-    activity = eval(model)
+    activity = model.constantize.new
 
     params.each do |key, value|
       activity[key] = value
@@ -38,11 +38,11 @@ class ActivitiesController < ApplicationController
 
   def getAllActivities
     tables = ActiveRecord::Base.connection.tables.map(&:singularize)
-    models = tables.map{|model| model.capitalize + ".all"}
-    models.delete("Schema_migration.all")
+    models = tables.map{|model| model.capitalize}
+    models.delete("Schema_migration")
     activities = []
     models.each do |model|
-      activities << eval(model)
+      activities << model.constantize.all
     end
     activities = activities.flatten
     render json: activities
@@ -51,8 +51,7 @@ class ActivitiesController < ApplicationController
   def getActivity
     url = request.env["HTTP_REFERER"]
     if url == "http://foodtruckin.herokuapp.com/" || url == "http://localhost:3000/"
-      model = params["model"].capitalize + ".all"
-      render json: eval(model)
+      render json: params["model"].capitalize.constantize.all
     end
   end
 
