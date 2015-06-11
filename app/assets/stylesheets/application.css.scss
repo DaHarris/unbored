@@ -70,14 +70,15 @@ form, #form {
 }
 
 .infoExtras {
-  background: #777777;
-  color: #BBBBBB;
+  background: #1EFFBC;
+  color: #666666;
   padding-left: 10%;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
 #extraInfo {
+  background: #048A81;
   margin-left: 0;
   margin-right: 0;
 }
@@ -94,6 +95,7 @@ form, #form {
 }
 
 .menupull {
+  opacity: 0.9;
   position: absolute;
   background: $bg-grey;
   width: 70%;

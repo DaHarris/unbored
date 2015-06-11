@@ -51,7 +51,7 @@ $(document).ready(function() {
         })
 
         function centerActivity(lat, long) {
-          $('#map-canvas').css('width','30%');
+          $('#map-canvas').css('width','24%');
           google.maps.event.trigger(map, "resize");
           position = new google.maps.LatLng(lat, long);
           map.setCenter(position);
@@ -134,7 +134,7 @@ $(document).ready(function() {
 
         $('#add').on('click', function() {
           center = map.getCenter();
-          $('#map-canvas').css('width','30%');
+          $('#map-canvas').css('width','24%');
           google.maps.event.trigger(map, "resize");
           map.panTo(center);
           $('#icons').empty();
