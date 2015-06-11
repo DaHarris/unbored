@@ -9,7 +9,7 @@ class CreateIcecream < ActiveRecord::Migration
       t.string :close
       t.string :phone
       t.string :address
-      t.string :icon, default: "Icecream.png"
+      t.string :icon, default: "icecream.png"
     end
   end
 end

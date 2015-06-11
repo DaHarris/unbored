@@ -6,7 +6,7 @@ class CreateDgbasket < ActiveRecord::Migration
       t.float :long
       t.string :description
       t.integer :holes
-      t.string :icon, default: "Dgbasket.png"
+      t.string :icon, default: "dgbasket.png"
     end
   end
 end
