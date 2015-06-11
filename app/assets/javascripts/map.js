@@ -134,6 +134,7 @@ $(document).ready(function() {
         }
 
         $('#add').on('click', function() {
+          $('#icons').css('height', '20%');
           $('#extraInfo .infoExtras').empty();
           $('.infoExtras').remove();
           center = map.getCenter();
