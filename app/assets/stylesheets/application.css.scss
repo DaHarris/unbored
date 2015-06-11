@@ -3,11 +3,25 @@
 @import 'columns';
 @import 'reset';
 @import 'variables';
+@import url(https://fonts.googleapis.com/css?family=Lobster|Raleway:400,100);
 
 html, body {
   width: 100%;
   height: 100%;
   position: fixed;
+}
+
+h1 {
+  font-family: $lobster;
+}
+
+a, p {
+  font-family: $raleway;
+}
+
+div {
+  font-family: $raleway;
+  font-weight: 100;
 }
 
 form, #form {
